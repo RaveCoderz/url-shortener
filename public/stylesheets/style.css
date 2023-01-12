@@ -1,8 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+main {
+  text-align: center;
+  width: 75%;
+  margin: 5% auto;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#inputUrl,
+#button {
+  border-radius: 0;
+  border: 0;
+  width: 80%;
+}
+
+#inputUrl {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5rem;
+}
+
+#button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5rem;
+  background-color: #00b7ff;
+  color: white;
+  font-weight: 900;
 }

@@ -18,10 +18,18 @@ initializeApp({
 });
 const db = getFirestore();
 
+router.get("/", async function (req, res, next) {
+  res.redirect("../");
+});
+
 router.get("/:id", async function (req, res, next) {
   const doc = await db.collection("links").doc(String(req.params.id)).get();
   const data = doc.data();
   if (data) {
+    res.send({
+      id: req.params.id,
+      url: data.url,
+    });
     res.redirect(data.url);
   } else {
     res.send({
@@ -33,11 +41,18 @@ router.get("/:id", async function (req, res, next) {
 router.post("/", async function (req, res, next) {
   const id = generateID();
   const docRef = db.collection("links").doc(String(id));
-  await docRef.set({ id: id, url: String(req.body.url) });
-
-  res.send({
-    shortenedURL: `http://localhost:3000/links/${id}`,
-  });
+  const url = String(req.body.url);
+  try {
+    await docRef.set({ id, url });
+    res.send({
+      id,
+      url,
+    });
+  } catch {
+    res.send({
+      error: "Something went wrong",
+    });
+  }
 });
 
 module.exports = router;

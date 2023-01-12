@@ -1,13 +1,31 @@
 <html>
+  <head>
+    <title>Сокращатель Очка</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<head>
-  <title>Сокращатель очка</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <main>
+      <h1>Сокращатель Очка</h1>
+      <p>Лучший сервис для сокращения ссылок</p>
 
-<body>
-  <h1>Сокращатель очка</h1>
-  <p>Самый лучший сервис для сокращения ссылок</p>
-</body>
+      <form id="form" method="post">
+        <input
+          value=""
+          type="url"
+          id="inputUrl"
+          placeholder="https://google.com/"
+        />
+        <button id="button" type="submit">Сократить</button>
+      </form>
 
+      <p id="result">
+      </p>
+
+      <br />
+
+      <a href="https://github.com/ShitCoderz/" target="_blank">@ShitCoderz</a>
+    </main>
+    <script src="/javascripts/script.js"></script>
+  </body>
 </html>
