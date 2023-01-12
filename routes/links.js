@@ -30,7 +30,7 @@ router.get("/:id", async function (req, res, next) {
       id: req.params.id,
       url: data.url,
     });
-    res.redirect(data.url);
+    // res.redirect(data.url);
   } else {
     res.send({
       error: "Not found",
