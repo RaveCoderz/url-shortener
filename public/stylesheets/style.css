@@ -19,31 +19,72 @@ a {
   text-decoration: none;
 }
 
-#form {
+#formShort,
+#formLong {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
 
+#inputLongUrl,
 #inputUrl,
+#buttonLong,
 #button {
   border-radius: 0;
   border: 0;
   width: 80%;
-}
-
-#inputUrl {
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 5rem;
 }
 
-#button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5rem;
+#button,
+#buttonLong {
   background-color: #00b7ff;
   color: white;
   font-weight: 900;
+  cursor: pointer;
+}
+
+#formLong button:hover .text-anim {
+  animation: text 1.5s linear forwards;
+}
+
+#formLong button:hover {
+  background: linear-gradient(90deg, pink, pink 5%, #00b7ff 5%);
+  animation: addpenis 1.5s linear forwards;
+}
+
+#formLong button:hover .line {
+  width: 3%;
+  position: relative;
+  top: 10px;
+  left: -15px;
+  text-align: left;
+  border: 1px solid black;
+  margin: -1px;
+}
+
+#resultLong{
+  word-wrap: break-word;
+}
+
+@keyframes addpenis {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    width: 90%;
+    margin-right: 10%;
+  }
+}
+
+@keyframes text {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    margin-right: -11.5%;
+  }
 }
