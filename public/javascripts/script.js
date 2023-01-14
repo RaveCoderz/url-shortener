@@ -5,6 +5,7 @@ const inputLongUrl = document.getElementById("inputLongUrl");
 const result = document.getElementById("result");
 const resultLong = document.getElementById("resultLong");
 
+
 async function shortLink(event) {
   event.preventDefault();
 
@@ -21,10 +22,11 @@ async function shortLink(event) {
 
     const res = await q.json();
     console.log();
-    result.innerHTML = `Сокращенная ссылка: <a href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
+    result.innerHTML = `<button id='shortLinkBtn' onclick='copyShortLink()'><img id='shortLinkImg' src='./imgs/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='shortLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
   }
 }
 
+let long = '';
 async function longLink(event) {
   event.preventDefault();
 
@@ -40,11 +42,25 @@ async function longLink(event) {
       },
     });
 
-    const res = await q.json();
-    console.log('хуйня переделывай');
-    resultLong.innerHTML = `Сокращенная ссылка: <a href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
+    let res = await q.json();
+    
+    resultLong.innerHTML = `<button id='longLinkBtn' onclick='copyLongLink()'><img id='longLinkImg' src='./imgs/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='longLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
   }
 }
+
+function copyLongLink(){ 
+  let longLinks = document.getElementById("longLinks").href;
+  let longLinkImg = document.getElementById('longLinkImg');
+  navigator.clipboard.writeText(longLinks);
+  longLinkImg.src = './imgs/done.svg';
+};
+
+function copyShortLink(){ 
+  let shortLinks = document.getElementById("shortLinks").href;
+  let shortLinkImg = document.getElementById('shortLinkImg');
+  navigator.clipboard.writeText(shortLinks);
+  shortLinkImg.src = './imgs/done.svg'
+};
 
 form.addEventListener("submit", shortLink, true);
 formLong.addEventListener("submit", longLink, true);
