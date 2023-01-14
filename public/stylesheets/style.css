@@ -19,6 +19,11 @@ a {
   text-decoration: none;
 }
 
+.link-icon {
+  width: 64px;
+  aspect-ratio: 1;
+}
+
 #formShort,
 #formLong {
   display: flex;
