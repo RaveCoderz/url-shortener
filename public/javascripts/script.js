@@ -22,7 +22,7 @@ async function shortLink(event) {
 
     const res = await q.json();
     console.log();
-    result.innerHTML = `<button id='shortLinkBtn' onclick='copyShortLink()'><img id='shortLinkImg' src='./imgs/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='shortLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
+    result.innerHTML = `<button id='shortLinkBtn' onclick='copyShortLink()'><img id='shortLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='shortLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
   }
 }
 
@@ -44,7 +44,7 @@ async function longLink(event) {
 
     let res = await q.json();
     
-    resultLong.innerHTML = `<button id='longLinkBtn' onclick='copyLongLink()'><img id='longLinkImg' src='./imgs/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='longLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
+    resultLong.innerHTML = `<button id='longLinkBtn' onclick='copyLongLink()'><img id='longLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='longLinks' href="${document.location.href}links/${res.id}">${document.location.href}links/${res.id}</a>`;
   }
 }
 
@@ -52,14 +52,14 @@ function copyLongLink(){
   let longLinks = document.getElementById("longLinks").href;
   let longLinkImg = document.getElementById('longLinkImg');
   navigator.clipboard.writeText(longLinks);
-  longLinkImg.src = './imgs/done.svg';
+  longLinkImg.src = './images/done.svg';
 };
 
 function copyShortLink(){ 
   let shortLinks = document.getElementById("shortLinks").href;
   let shortLinkImg = document.getElementById('shortLinkImg');
   navigator.clipboard.writeText(shortLinks);
-  shortLinkImg.src = './imgs/done.svg'
+  shortLinkImg.src = './images/done.svg'
 };
 
 form.addEventListener("submit", shortLink, true);
