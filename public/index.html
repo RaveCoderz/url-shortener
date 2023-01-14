@@ -1,7 +1,8 @@
 <html>
   <head>
     <title>Сокращатель Очка</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -42,11 +43,32 @@
         </button>
       </form>
       <p id="resultLong"></p>
+      Перетащи сокращатель в панель закладок для быстрого сокращения ссылок
+      <a
+        href="javascript:(() => {
+        (async () => {
+            const zapros = await fetch('https://shitcoderz.ru/links', {
+              method: 'POST',
+              body: JSON.stringify({
+                url: document.location.href,
+              }),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+            const res = await zapros.json();
+            navigator.clipboard.writeText(`https://shitcoderz.ru/links/${res.id}`);
+            alert(`https://shitcoderz.ru/links/${res.id}`);
+          })()
+      })()"
+      >
+        <img src="" alt="" />
+      </a>
       <br />
       <a href="https://github.com/ShitCoderz/" target="_blank"
         ><i class="fab fa-github"></i> ShitCoderz</a
       >
-      
+      <br />
     </main>
     <script src="/javascripts/script.js"></script>
   </body>
