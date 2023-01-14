@@ -46,7 +46,18 @@ a {
   font-weight: 900;
   cursor: pointer;
 }
-
+#shortLinkBtn,
+#longLinkBtn {
+  display: inline;
+  border:none;
+  padding:0;
+  background-color: transparent;
+}
+#result,
+#resultLong{
+  display:flex;
+  flex-direction: column;
+}
 #formLong button:hover .text-anim {
   animation: text 1.5s linear forwards;
 }
