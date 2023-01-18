@@ -117,6 +117,11 @@ body.dark .input {
   animation: addpenis 1.5s linear forwards;
 }
 
+.dark .button.long:hover {
+  background: linear-gradient(90deg, pink, pink 5%, lightskyblue 5%);
+  animation: addpenis 1.5s linear forwards;
+}
+
 .button.long:hover .line {
   width: 3%;
   position: relative;
