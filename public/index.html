@@ -16,33 +16,45 @@
       <h1>Сокращатель Очка</h1>
       <p>Лучший сервис для сокращения ссылок</p>
 
-      <form id="formShort" method="post">
+      <label for="theme-switch-checkbox">
+        <img
+          id="theme-switch"
+          src="./images/light_mode.svg"
+          alt="Theme Switcher Icon"
+        />
+      </label>
+
+      <input type="checkbox" id="theme-switch-checkbox" />
+
+      <form class="form" id="formShort" method="post">
         <input
+          class="input"
           value=""
           type="url"
           id="inputUrl"
           placeholder="https://google.com/"
         />
-        <button id="button" type="submit">Сократить</button>
+        <button class="button" id="button" type="submit">Сократить</button>
       </form>
 
-      <p id="result"></p>
+      <p class="result" id="result"></p>
 
       <br />
       <p>Лучший сервис для удлинение ссылок</p>
-      <form id="formLong" method="post">
+      <form class="form" id="formLong" method="post">
         <input
+          class="input"
           value=""
           type="url"
           id="inputLongUrl"
           placeholder="https://google.com/"
         />
-        <button id="buttonLong" type="submit">
+        <button class="button long" id="buttonLong" type="submit">
           <div class="line"></div>
           <span class="text-anim">Удлинить</span>
         </button>
       </form>
-      <p id="resultLong"></p>
+      <p class="result" id="resultLong"></p>
       <p>
         Перетащи сокращатель в панель закладок для быстрого сокращения ссылок
       </p>
