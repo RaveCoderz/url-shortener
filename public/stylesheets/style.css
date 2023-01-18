@@ -98,6 +98,7 @@ body.dark .input {
   cursor: pointer;
 }
 .dark .button {
+  color: #2e2e2e;
   background-color: lightskyblue;
 }
 
