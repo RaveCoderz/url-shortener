@@ -23,7 +23,7 @@ async function shortLink(event) {
 
     const res = await q.json();
     console.log();
-    result.innerHTML = `<button id='shortLinkBtn' onclick='copyShortLink()'><img id='shortLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='shortLinks' href="${document.location.href}/${res.id}">${document.location.href}/${res.id}</a>`;
+    result.innerHTML = `<button id='shortLinkBtn' onclick='copyShortLink()'><img id='shortLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='shortLinks' href="${document.location.href}${res.id}">${document.location.href}${res.id}</a>`;
   }
 }
 
@@ -44,7 +44,7 @@ async function longLink(event) {
 
     let res = await q.json();
 
-    resultLong.innerHTML = `<button id='longLinkBtn' onclick='copyLongLink()'><img id='longLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='longLinks' href="${document.location.href}/${res.id}">${document.location.href}/${res.id}</a>`;
+    resultLong.innerHTML = `<button id='longLinkBtn' onclick='copyLongLink()'><img id='longLinkImg' src='./images/content.svg' width='20' height='20'></button> Сокращенная ссылка: <a id='longLinks' href="${document.location.href}${res.id}">${document.location.href}${res.id}</a>`;
   }
 }
 
