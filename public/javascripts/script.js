@@ -11,7 +11,7 @@ async function shortLink(event) {
   event.preventDefault();
 
   if (inputUrl.value.length > 0) {
-    const q = await fetch("/c", {
+    const q = await fetch("/", {
       method: "POST",
       body: JSON.stringify({
         url: inputUrl.value,
@@ -31,7 +31,7 @@ async function longLink(event) {
   event.preventDefault();
 
   if (inputLongUrl.value.length > 0) {
-    const q = await fetch("/c", {
+    const q = await fetch("/", {
       method: "POST",
       body: JSON.stringify({
         url: inputLongUrl.value,
