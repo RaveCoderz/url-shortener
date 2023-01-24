@@ -7,6 +7,26 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
+router.get("/:id", async function (req, res, next) {
+  const doc = await req.app.db
+    .collection("links")
+    .doc(String(req.params.id))
+    .get();
+  const data = doc.data();
+  if (data) {
+    // JSON Response
+    // res.send({
+    //   id: req.params.id,
+    //   url: data.url,
+    // });
+    res.redirect(data.url);
+  } else {
+    res.send({
+      error: "Not found",
+    });
+  }
+});
+
 router.post("/", async function (req, res, next) {
   const id = req.body.long ? generateLongID() : generateID();
   const docRef = req.app.db.collection("links").doc(String(id));
