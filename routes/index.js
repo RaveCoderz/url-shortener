@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Сокращатель Очка" });
 });
 
 router.get("/status", async function (req, res, next) {
@@ -18,16 +18,9 @@ router.get("/:id", async function (req, res, next) {
     .get();
   const data = doc.data();
   if (data) {
-    // JSON Response
-    // res.send({
-    //   id: req.params.id,
-    //   url: data.url,
-    // });
     res.redirect(data.url);
   } else {
-    res.send({
-      error: "Not found",
-    });
+    res.redirect("404.html");
   }
 });
 
