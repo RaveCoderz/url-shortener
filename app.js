@@ -13,8 +13,6 @@ initializeApp({
 const db = getFirestore();
 
 const indexRouter = require("./routes/index");
-const legacyLinksRouter = require("./routes/links");
-const linksRouter = require("./routes/c");
 const statusRouter = require("./routes/status");
 
 const app = express();
@@ -27,8 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/links/", legacyLinksRouter);
-app.use("/c/", linksRouter);
 app.use("/status/", statusRouter);
 
 module.exports = app;
