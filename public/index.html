@@ -61,7 +61,7 @@
       <a
         href="javascript:(() => {
         (async () => {
-            const zapros = await fetch('https://shitcoderz.ru/c', {
+            const req = await fetch('https://c.shitcoderz.ru/', {
               method: 'POST',
               body: JSON.stringify({
                 url: document.location.href,
@@ -70,9 +70,9 @@
                 'Content-Type': 'application/json',
               },
             });
-            const res = await zapros.json();
-            navigator.clipboard.writeText(`https://shitcoderz.ru/c/${res.id}`);
-            alert(`https://shitcoderz.ru/c/${res.id}`);
+            const res = await req.json();
+            navigator.clipboard.writeText(`https://c.shitcoderz.ru/${res.id}`);
+            alert(`https://c.shitcoderz.ru/${res.id}`);
           })()
       })()"
       >
