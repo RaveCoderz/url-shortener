@@ -7,6 +7,10 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
+router.get("/status", async function (req, res, next) {
+  res.sendStatus(200);
+});
+
 router.get("/:id", async function (req, res, next) {
   const doc = await req.app.db
     .collection("links")
