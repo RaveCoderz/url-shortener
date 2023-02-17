@@ -2,6 +2,11 @@ var express = require("express");
 const { generateID, generateLongID } = require("../functions/generators");
 var router = express.Router();
 
+/* GET home page. */
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Сокращатель Очка" });
+});
+
 router.get("/status", async function (req, res, next) {
   res.sendStatus(200);
 });
