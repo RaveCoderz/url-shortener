@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2e2e2e;
+}
+
+body.dark {
+  background-color: #2e2e2e;
+}
+.dark h1,
+.dark p {
+  color: #ffffff;
+}
+
+main {
+  text-align: center;
+  width: 75%;
+  margin: 5% auto;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+.dark a {
+  color: lightskyblue;
+}
+
+#theme-switch {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #2e2e2e;
+  user-select: none;
+  transition: transform 0.25s;
+}
+
+#theme-switch:hover {
+  transform: scale(1.1);
+}
+
+#theme-switch-checkbox {
+  display: none;
+}
+
+.dark #theme-switch {
+  filter: invert(85%) sepia(30%) saturate(643%) hue-rotate(335deg)
+    brightness(104%) contrast(102%);
+}
+
+.link-icon {
+  width: 64px;
+  aspect-ratio: 1;
+}
+
+body.dark #theme-switch {
+  color: #ffffff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input,
+.button {
+  border-radius: 0;
+  border: 0;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+}
+
+.input {
+  border: 1px solid #ccc;
+}
+
+body.dark .input {
+  color: #ffffff;
+  background-color: #4e4e4e;
+  border: 1px solid #6e6e6e;
+}
+
+.button {
+  background-color: #00b7ff;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+.dark .button {
+  color: #2e2e2e;
+  background-color: lightskyblue;
+}
+
+.result {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
+.button.long:hover .text-anim {
+  animation: text 1.5s linear forwards;
+}
+
+.button.long:hover {
+  background: linear-gradient(90deg, pink, pink 5%, #00b7ff 5%);
+  animation: addpenis 1.5s linear forwards;
+}
+
+.dark .button.long:hover {
+  background: linear-gradient(90deg, pink, pink 5%, lightskyblue 5%);
+  animation: addpenis 1.5s linear forwards;
+}
+
+.button.long:hover .line {
+  width: 3%;
+  position: relative;
+  top: 10px;
+  left: -15px;
+  text-align: left;
+  border: 1px solid black;
+  margin: -1px;
+}
+
+#shortLinkBtn,
+#longLinkBtn {
+  display: inline;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@keyframes addpenis {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    width: 90%;
+    margin-right: 10%;
+  }
+}
+
+@keyframes text {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    margin-right: -11.5%;
+  }
+}
+
+.e404 {
+  text-align: center;
+}
