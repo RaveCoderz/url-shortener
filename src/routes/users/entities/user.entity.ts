@@ -1,7 +1,8 @@
 export class User {
   id: string;
   name: string;
-  email: string;
+  login: string;
+  email?: string;
   password: string;
   createTimeStamp: Date;
 }

@@ -41,14 +41,15 @@ export class LinksController {
   //   return await this.linksService.findAll();
   // }
 
-  @Get(':code')
-  async findOne(@Res() res, @Param('code') code: string) {
+  @Get(':linkCode')
+  async findOne(@Res() res, @Param('linkCode') code: string) {
     if (!code) return 'You need to specify correct ID!';
     const link = await this.linksService.findOneByCode(code);
-    if (link) {
+
+    if (link && link !== null) {
       res.status(302).redirect(link.url);
     } else {
-      return 'Link not found';
+      res.status(302).send('Not found');
     }
   }
 
