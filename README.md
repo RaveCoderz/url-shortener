@@ -6,10 +6,6 @@
   </a>
 </p>
 
-## Description
-
-As it is, written in TypeScript using NestJS and MongoDB
-
 ## Installation
 
 ```bash
