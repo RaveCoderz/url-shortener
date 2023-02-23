@@ -1,5 +1,11 @@
 # URL Shortener
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nest,ts,nodejs,mongo&perline=20" />
+  </a>
+</p>
+
 ## Description
 
 As it is, written in TypeScript using NestJS and MongoDB
