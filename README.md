@@ -1,4 +1,4 @@
-# UrlShortener
+# URL Shortener
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -8,16 +8,8 @@
 
 ## Development server
 
-Run `nx serve web` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+`npm run start:all` or `nx run-many --target=serve --all --parallel=10`
 
-## Understand this workspace
+Web: `http://localhost:4200/`
 
-Run `nx graph` to see a diagram of the dependencies of the projects.
-
-## Remote caching
-
-Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and make CI faster.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+API: `http://localhost:3333/api`
