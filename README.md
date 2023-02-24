@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nest,angular,tailwind,nodejs,ts,mongo&perline=20" />
+    <img src="https://skillicons.dev/icons?i=nest,angular,tailwind,nodejs,ts,sass,mongo&perline=20" />
   </a>
 </p>
 
