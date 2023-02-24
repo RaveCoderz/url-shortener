@@ -19,5 +19,6 @@ $  nx run-many --target=serve --all --parallel=10
 ## Ports
 ```
 Web: http://localhost:4200/
-API: http://localhost:3333/api
+API Endpoint: http://localhost:3333/api
+Swagger Docs API: http://localhost:3333/api-docs
 ```
