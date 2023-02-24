@@ -19,6 +19,10 @@ $  nx run-many --target=serve --all --parallel=10
 ## Ports
 ```
 Web: http://localhost:4200/
+
 API Endpoint: http://localhost:3333/api
 Swagger Docs API: http://localhost:3333/api-docs
+
+MongoDB: http://localhost:27017/
+Mongo Express: http://localhost:8081/
 ```
