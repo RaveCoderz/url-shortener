@@ -1,4 +1,4 @@
-# URL Shortener
+<h1 align="center">URL Shortener</h1>
 
 <p align="center">
   <a href="https://skillicons.dev">
