@@ -8,8 +8,16 @@
 
 ## Development server
 
-`npm run start:all` or `nx run-many --target=serve --all --parallel=10`
+```bash
+$  npm run start:all
+```
+or 
+```bash
+$  nx run-many --target=serve --all --parallel=10
+```
 
-Web: `http://localhost:4200/`
-
-API: `http://localhost:3333/api`
+## Ports
+```
+Web: http://localhost:4200/
+API: http://localhost:3333/api
+```
