@@ -22,7 +22,7 @@ export class LinksController {
     if (!createLinkDto.url)
       return res.status(400).send('You need to specify the URL!');
 
-    createLinkDto.code = this.generateLinkCode();
+    createLinkDto.code = this.generateLinkCode(createLinkDto.longify || false);
     createLinkDto.id = uuid();
     createLinkDto.createTimeStamp = new Date();
 
@@ -31,25 +31,25 @@ export class LinksController {
     res.status(200).send(await this.linksService.findOne(createLinkDto.id));
   }
 
-  @Get()
-  index() {
-    return 'Welcome to Short URL';
-  }
-
   // @Get()
-  // async findAll() {
-  //   return await this.linksService.findAll();
+  // index() {
+  //   return 'Welcome to Short URL';
   // }
 
-  @Get(':linkCode')
-  async findOne(@Res() res, @Param('linkCode') code: string) {
-    if (!code) return 'You need to specify correct ID!';
-    const link = await this.linksService.findOneByCode(code);
+  @Get()
+  async findAll() {
+    return await this.linksService.findAll();
+  }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string, @Res() res) {
+    if (!id) return 'You need to specify correct ID!';
+    const link = await this.linksService.findOne(id);
 
     if (link && link !== null) {
-      res.status(302).redirect(link.url);
+      res.status(200).send(link);
     } else {
-      res.status(302).send('Not found');
+      res.status(404);
     }
   }
 
@@ -67,16 +67,28 @@ export class LinksController {
       : 'You need to specify correct ID!';
   }
 
-  generateLinkCode() {
-    const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+  generateLinkCode(longify?: boolean) {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
 
-    const now = Math.round(Date.now() * Math.random());
-    const res = String(now)
-      .substring(String(now).length - 7)
-      .split('')
-      .map((v) =>
-        Math.random() > 0.5 ? chars[Number(v)] : chars[Number(v)].toUpperCase()
-      );
-    return res.join('');
+    if (longify) {
+      const res = [];
+
+      for (let i = 0; i <= 1499; i++) {
+        const item = chars[Math.floor(Math.random() * chars.length)];
+        res.push(Math.random() > 0.5 ? item.toLowerCase() : item.toUpperCase());
+      }
+      return res.join('');
+    } else {
+      const now = Math.round(Date.now() * Math.random());
+      const res = String(now)
+        .substring(String(now).length - 7)
+        .split('')
+        .map((v) =>
+          Math.random() > 0.5
+            ? chars[Number(v)]
+            : chars[Number(v)].toUpperCase()
+        );
+      return res.join('');
+    }
   }
 }

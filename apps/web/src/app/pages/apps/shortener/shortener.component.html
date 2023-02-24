@@ -1,0 +1,47 @@
+<div class="my-10 flex justify-center">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="handleForm()"
+    class="flex max-w-[50%] gap-4 flex-col items-center"
+  >
+    <h1 class="text-center text-4xl font-extrabold">URL Shortener</h1>
+
+    <input
+      class="w-full border rounded-lg p-2 focus:outline-blue-400"
+      type="url"
+      placeholder="Enter URL"
+      formControlName="url"
+    />
+
+    <label class="leading-none flex line-he items-center gap-1"
+      ><input type="checkbox" formControlName="longify" /> Longify</label
+    >
+
+    <button
+      type="submit"
+      class="w-full text-white disabled:bg-blue-200 bg-blue-500 hover:bg-blue-600 active:bg-blue-400 transition-colors rounded-lg p-2"
+      [disabled]="form.invalid"
+    >
+      Run
+    </button>
+    <div class="break-all" *ngIf="shortenedLink">
+      <button
+        type="button"
+        (click)="copy(shortened)"
+        class="mx-auto flex items-center gap-1"
+      >
+        {{ isCopied ? 'Copied' : 'Copy URL' }}
+        <img
+          class="w-5 h-5"
+          [src]="
+            isCopied
+              ? 'assets/images/icons/done.svg'
+              : 'assets/images/icons/content.svg'
+          "
+          alt="Copy Icon"
+        />
+      </button>
+      <a [href]="shortened">{{ shortened }}</a>
+    </div>
+  </form>
+</div>

@@ -6,5 +6,6 @@ export class CreateLinkDto {
   user?: User;
   url: string;
   code: string;
+  longify?: boolean;
   createTimeStamp: Date;
 }
