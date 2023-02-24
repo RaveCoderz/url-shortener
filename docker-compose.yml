@@ -1,13 +1,25 @@
 version: '3'
 services:
   mongo:
-    image: mongo
-    container_name: mongo
-    restart: always
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin
+    image: mongo:latest
+    container_name: shortener_mongo
+    env_file:
+      - envs/.docker.env
     ports:
       - 27017:27017
     volumes:
-      - ./mongo-data:/data/db
+      - mongo_data:/data/db
+    command: --wiredTigerCacheSizeGB 1.5
+    restart: unless-stopped
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: shortener_mongo_express
+    env_file:
+      - envs/.docker.env
+    ports:
+      - 8081:8081
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
